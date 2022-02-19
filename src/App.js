@@ -12,9 +12,11 @@ function App() {
         res => res.json()
       )
       .then(
-        data => console.log('data=',data.products)
-        
-      )
+        data => {
+          console.log('data=',data.products)
+
+          setProducts(data.products)
+        })
       .catch(
         err => console.log('err=',err)
       )
@@ -34,7 +36,14 @@ function App() {
         <input type='date' />
         <button>Add</button>
       </div>
-      <Product />
+      
+      {products.map( product => {
+        return(
+          <Product key={product.id} product={product}/>
+        )
+      })
+      }
+      
     </div>
   );
 }

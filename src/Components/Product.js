@@ -1,12 +1,13 @@
 import React from 'react';
 
 
-function Product() {
+function Product({product}) {
   return (
     <>
+    
       <center>
-        <h1>Product Name</h1>
-        <h3>Price</h3><p>Date</p>
+        <h1>{product.name}</h1>
+        <h3>{product.price}</h3>
       </center>
     </>
   );
