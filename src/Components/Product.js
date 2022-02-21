@@ -7,7 +7,9 @@ function Product({product}) {
     
       <center>
         <h1>{product.name}</h1>
-        <h3>{product.price}</h3>
+        <h3>{product.prices[0].price} cedis</h3>
+        <button /*onClick={handleEdit}*/>Edit</button>
+        <button /*onClick={handleDelete}*/>Delete</button>
       </center>
     </>
   );
