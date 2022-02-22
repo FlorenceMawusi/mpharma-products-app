@@ -1,15 +1,15 @@
 import React from 'react';
 
 
-function Product({product}) {
+function Product({product, price, handleDelete, handleEdit}) {
   return (
     <>
     
       <center>
         <h1>{product.name}</h1>
-        <h3>{product.prices[0].price} cedis</h3>
-        <button /*onClick={handleEdit}*/>Edit</button>
-        <button /*onClick={handleDelete}*/>Delete</button>
+        <h3>{price.price} cedis</h3>
+        <button onClick={() => handleEdit(product.id)}>Edit</button>
+        <button onClick={() => handleDelete(product.id)}>Delete</button>
       </center>
     </>
   );
