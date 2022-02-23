@@ -39,9 +39,9 @@ function App() {
           const state = { products: records, prices: flatArray };
           console.log('state=', state);
 
-          const storedProducts = localStorage.getItem(LOCAL_STORAGE_KEY);
+          // const storedProducts = localStorage.getItem(LOCAL_STORAGE_KEY);
 
-          console.log('localstorage=',storedProducts );
+          // console.log('localstorage=',storedProducts );
 
           setStore(state)
           //storedProducts?setStore(storedProducts):
@@ -70,7 +70,7 @@ function App() {
         const newPrice = {
           id: store.prices.length + 1,
           price: parseInt(price),
-          date: new Date().getTime().toString(),
+          date: new Date().toISOString(),
         }
         console.log('price', newPrice);
         const newProduct = {
@@ -100,7 +100,7 @@ function App() {
             const newPrice = {
               id: store.prices.length + 1,
               price: parseInt(price),
-              date: new Date().getTime().toString(),
+              date: new Date().toISOString(),
             }
             store.prices.push(newPrice);
             store.products[oldProductIndex].pricesIds.unshift(newPrice.id)
