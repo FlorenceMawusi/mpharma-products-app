@@ -18,8 +18,25 @@ function Product({product, price, handleDelete, handleEdit}) {
                 </div>
               </div>
               <div>
-                <button className="product_button" onClick={() => handleEdit(product.id)}>Edit</button>
-                <button className="product_button" onClick={() => handleDelete(product.id)}>Delete</button>
+                <button 
+                  className="product_button" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleEdit(product.id);
+                  }}
+                  >Edit
+                  </button>
+                <button
+                  className="product_button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    {
+                      handleDelete(product.id);
+                    }
+                  }}
+                >
+                  Delete
+                </button>
               </div>
               
             </div>

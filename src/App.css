@@ -17,7 +17,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
-  margin: 2rem 3vw;
+  margin: 0rem 3vw;
   padding: 0;
   list-style-type: none;
 }
@@ -123,7 +123,10 @@ body {
   transition: all 0.5s ease 0s;
 }
 
-
+.product_button:hover {
+  background-color: #db91976c;
+  
+}
 
 
 #title-Tag-Line {
@@ -155,24 +158,13 @@ body {
   background-color: #ebebeb;
   
 }
-.name:hover {
-  border-bottom: 5px solid #e6aeb36c;
-  height: 30px;
-  width: 380px;
-  transition: ease 0.5s;
-}
+
 
 .email {
   background-color: #ebebeb;
   height: 2em;
 }
 
-.email:hover {
-  border-bottom: 5px solid #e6aeb36c;
-  height: 30px;
-  width: 380px;
-  transition: ease 0.5s;
-}
 
 
 .formEntry {
@@ -182,7 +174,7 @@ body {
   padding: 8px;
   border-radius: 2px;
   border: none;
-  transition: all 0.5s ease 0s;
+  
 }
 
 .submit {
@@ -193,11 +185,8 @@ body {
 }
 
 .submit:hover {
-  box-shadow: 15px 15px 15px 5px rgba(78, 72, 77, 0.219);
-  transform: translateY(-3px);
-  width: 300px;
-  border-top: 5px solid #0e3750;
-  border-radius: 0%;
+  background-color: #db91976c;
+  
 }
 
 

@@ -15,7 +15,7 @@ function App() {
 
   
   useEffect( () => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(store))
+    window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(store))
     
   }, [store])
 
@@ -83,7 +83,7 @@ function App() {
         setStore(store => {
           return ({
             prices: [...store.prices, newPrice],
-            products: [...store.products, newProduct]
+            products: [newProduct,...store.products]
           })
         })
       } else {
@@ -95,7 +95,8 @@ function App() {
 
         setStore(store => {
 
-          if(store.prices[oldPriceIndex] !== price){
+          if(store.prices[oldPriceIndex].price !== price){
+            console.log('old=',store.prices[oldPriceIndex],'new=',price)
             const newPrice = {
               id: store.prices.length + 1,
               price: parseInt(price),
@@ -130,10 +131,12 @@ function App() {
 
 
   const handleEdit = (id) => {
+    
+    
     const specificProduct = store.products.find((product) => product.id === id);
     console.log(specificProduct)
 
-    const specificPrice = store.prices.find((price) => price.id === id);
+    const specificPrice = store.prices.find((price) => price.id === specificProduct.pricesIds[0]);
     console.log(specificPrice)
 
     setIsAdd(false)
@@ -181,7 +184,7 @@ function App() {
 
 
 
-      <div class="pageTitle title">
+      <div className="pageTitle title">
         {isAdd?
           <p>Add Product</p>:
 
