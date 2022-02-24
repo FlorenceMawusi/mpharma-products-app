@@ -126,6 +126,7 @@ body {
 
 .product_button {
   width: 200px;
+  color:rgb(14, 0, 0);
   background-color: #e6aeb36c;
   font-size: 15px;
   display: block;
