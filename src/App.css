@@ -108,11 +108,19 @@ body {
   color: #D7BDCA;
 }
 
-.minorcards {
+/* .minorcards {
   width: 40% !important;
   margin: auto;
   margin-top: 80px;
   padding: 70px 0;
+} */
+
+@media screen and (min-width: 600px) {
+  .minor {
+    width: 40% !important;
+    margin: auto;
+    margin-top: 80px;
+  }
 }
 
 
