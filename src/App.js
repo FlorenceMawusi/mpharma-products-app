@@ -135,16 +135,16 @@ function App() {
     
     
     const specificProduct = store.products.find((product) => product.id === id);
-    console.log(specificProduct)
+    console.log(specificProduct);
 
     const specificPrice = store.prices.find((price) => price.id === specificProduct.pricesIds[0]);
-    console.log(specificPrice)
+    console.log(specificPrice);
 
-    setIsAdd(false)
-    setProductId(specificProduct.id)
+    setIsAdd(false);
+    setProductId(specificProduct.id);
     setProductame(specificProduct.name);
-    setPrice(specificPrice.price)
-
+    setPrice(specificPrice.price);
+    window.scrollTo(0, 0);
 
   }
 
