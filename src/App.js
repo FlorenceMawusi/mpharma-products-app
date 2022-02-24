@@ -1,7 +1,7 @@
 import React, { useState, useEffect, } from 'react'
 import './App.css';
 import Product from './Components/Product.js';
-
+import Loader from './Components/Loader.js';
 const LOCAL_STORAGE_KEY = 'store_products';
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
   const [price, setPrice] = useState('');
   const [productId, setProductId] = useState(null);
   const [isAdd, setIsAdd] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   
   useEffect( () => {
@@ -44,6 +45,7 @@ function App() {
           // console.log('localstorage=',storedProducts );
 
           setStore(state)
+          setIsLoading(false);
           //storedProducts?setStore(storedProducts):
           // if (storedProducts) {
           //   setStore(state)
@@ -179,9 +181,8 @@ function App() {
   console.log(store?.products);
   return (
     <div>
-
-
-
+      {isLoading? <Loader /> : 
+      <>
       <div className="pageTitle title">
         {isAdd?
           <p>Add Product</p>:
@@ -241,8 +242,10 @@ function App() {
       })
       }
       </div>
-
+      </>
+  }
     </div>
+
   );
 }
 
