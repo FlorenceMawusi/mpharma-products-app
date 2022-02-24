@@ -20,7 +20,7 @@ function App() {
   }, [store])
 
   useEffect(() => {
-    fetch('http://www.mocky.io/v2/5c3e15e63500006e003e9795')
+    fetch('https://www.mocky.io/v2/5c3e15e63500006e003e9795')
       .then(
         res => res.json()
       )
