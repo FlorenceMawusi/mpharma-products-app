@@ -13,7 +13,7 @@ export default function
         <div className="bar bar6"></div>
         <div className="bar bar7"></div>
         <div className="bar bar8"></div>
-        <p style={{textAlign: 'center'}}>Loading...</p>
+        <p style={{textAlign: 'center', color: 'rgb(14, 0, 0)'}}>Loading...</p>
     </div>
   )
 }
