@@ -79,7 +79,7 @@ function App() {
           pricesIds: [newPrice.id]
         }
         console.log('product', newProduct);
-
+        alert('Product succesfully added.')
         setStore(store => {
           return ({
             prices: [...store.prices, newPrice],
@@ -92,7 +92,7 @@ function App() {
 
         const oldPriceIndex = store.prices.findIndex(
           each => store.products[oldProductIndex].pricesIds[0] === each.id);
-
+        
         setStore(store => {
 
           if(store.prices[oldPriceIndex].price !== price){
@@ -113,6 +113,7 @@ function App() {
             }
           )
         })
+        alert('Product successfully edited.')
         
       }
       setProductame('');
@@ -145,7 +146,6 @@ function App() {
     setPrice(specificPrice.price)
 
 
-    // const editedProduct = {...specificProduct, ...specificProduct.name: productname}
   }
 
   const handleDelete = (id) => {
@@ -162,8 +162,6 @@ function App() {
         products: filteredProducts
       })
     })
-
-
 
 
   }
@@ -191,37 +189,38 @@ function App() {
           <p>Edit Product</p>
         } 
       </div>
-      <form onSubmit={addEditProduct}>
-        <div>
-          <input
-            placeholder='Name'
-            type='text'
-            className="name formEntry"
-            value={productname}
-            onChange={e => setProductame(e.target.value)}
-          />
+      <div className='form'>
+        <form onSubmit={addEditProduct}>
+          <div style={{marginTop:'30px'}}>
+            <input
+              placeholder='Name'
+              type='text'
+              className="name formEntry"
+              value={productname}
+              onChange={e => setProductame(e.target.value)}
+            />
 
-        </div>
-        <div>
-          <input
-            placeholder='Price'
-            type='text'
-            className="name formEntry"
-            value={price}
-            onChange={e => setPrice(e.target.value)}
-          />
+          </div>
+          <div>
+            <input
+              placeholder='Price'
+              type='number'
+              className="price formEntry"
+              value={price}
+              onChange={e => setPrice(e.target.value)}
+            />
 
-        </div>
+          </div>
 
-        {isAdd ?
-          <button className="submit formEntry" type='submit'>Add</button> :
-          <button className="submit formEntry" type='submit'>Save</button>
-        }
-        <button className="submit formEntry" onClick={cancel}type='button'>Cancel</button>
-      </form>
-
-      <ul className="cards">
-      {store && store.products?.map(product => {
+          {isAdd ?
+            <button className="submit formEntry" type='submit'>Add</button> :
+            <button className="submit formEntry" type='submit'>Save</button>
+          }
+          <button className="submit formEntry" onClick={cancel}type='button'>Cancel</button>
+        </form>
+      </div>
+      <div className="cards">
+      {store && store.products?.map((product,index, array) => {
 
         const price = store.prices?.find(price => {
 
@@ -231,6 +230,7 @@ function App() {
         return (
 
           <Product
+            array={array}
             key={product.id}
             product={product}
             price={price}
@@ -240,7 +240,7 @@ function App() {
         )
       })
       }
-      </ul>
+      </div>
 
     </div>
   );

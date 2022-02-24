@@ -108,6 +108,12 @@ body {
   color: #D7BDCA;
 }
 
+.minorcards {
+  width: 40% !important;
+  margin: auto;
+  margin-top: 80px;
+  padding: 70px 0;
+}
 
 
 .product_button {
@@ -120,6 +126,7 @@ body {
   padding: 8px;
   border-radius: 8px;
   border: none;
+  cursor: pointer;
   transition: all 0.5s ease 0s;
 }
 
@@ -149,23 +156,40 @@ body {
 
 
 .pageTitle{
-  font-size: 2em;
+  font-size: 18px;
   font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 
 .name {
   background-color: #ebebeb;
+  padding: 15px !important;
+  
   
 }
 
 
-.email {
+.price {
   background-color: #ebebeb;
-  height: 2em;
+  padding: 15px !important;
 }
 
+form {
+  margin-bottom:  50px;
+}
 
+.form {
+  border: 1px solid #ebebeb;
+  width: 400px;
+  height: 300px;
+  margin: auto;
+  margin-top: 0px;
+  margin-bottom: 40px;
+  background-color: #fff;
+}
 
 .formEntry {
   display: block;
@@ -181,7 +205,9 @@ body {
   width: 200px;
   color: rgb(14, 0, 0);
   background-color: #e6aeb36c;
-  font-size: 20px;
+  font-size: 16px;
+  padding: 12px;
+  cursor: pointer;
 }
 
 .submit:hover {

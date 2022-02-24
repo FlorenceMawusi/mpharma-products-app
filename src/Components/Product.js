@@ -2,12 +2,12 @@ import React from 'react';
 import '../App.css';
 
 
-function Product({product, price, handleDelete, handleEdit}) {
+function Product({product, price, handleDelete, handleEdit, array}) {
   return (
     <>
-      <ul className="cards">
+      <ul className={array.length <2?"cards minorcards":"cards"}>
         <li>
-          <a href="" className="card">
+          <a href="#" className="card">
             <img src="https://i.imgur.com/2DhmtJ4.jpg" className="card__image" alt="" />
             <div className="card__overlay">        
               <div className="card__header">
