@@ -180,9 +180,9 @@ function App() {
   console.log(store?.prices);
   console.log(store?.products);
   return (
-    <div>
+    <>
       {isLoading? <Loader /> : 
-      <>
+      <div>
       <div className="pageTitle title">
         {isAdd?
           <p>Add Product</p>:
@@ -242,9 +242,9 @@ function App() {
       })
       }
       </div>
-      </>
+      </div>
   }
-    </div>
+    </>
 
   );
 }

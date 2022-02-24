@@ -9,7 +9,8 @@
 }
 
 body {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif ;
+  color: rgb(14, 0, 0);
   background-color: #fef8f8;
 }
 
