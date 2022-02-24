@@ -204,7 +204,7 @@ function App() {
           </div>
           <div>
             <input
-              placeholder='Price'
+              placeholder='Price (cedis)'
               type='number'
               className="price formEntry"
               value={price}

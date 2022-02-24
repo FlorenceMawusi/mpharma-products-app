@@ -189,6 +189,10 @@ form {
   margin-bottom:  50px;
 }
 
+input {
+  color:rgb(14, 0, 0);
+}
+
 .form {
   border: 1px solid #ebebeb;
   width: 400px;
